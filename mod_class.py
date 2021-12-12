@@ -41,7 +41,7 @@ class Pustakawan :
     
 
 class Buku :
-    def __init__(self, id_buku, judul, penulis, penerbit, tahun_terbit, genre) :
+    def __init__(self, id_buku, judul, penulis, penerbit, tahun_terbit) :
         self.id_buku = id_buku
         self.judul = judul
         self.penulis = penulis
@@ -78,16 +78,12 @@ class Buku :
     def get_tahun_terbit(self) :
         return self.tahun_terbit
 
-    def set_genre(self, genre) :
-        self.genre = genre
-
-    def get_genre(self) :
-        return self.genre
-
 
 class PeminjamanBuku :
-    def __init__(self, id_peminjaman, tgl_pinjam, tgl_kembali, denda) :
+    def __init__(self, id_peminjaman, id_buku, id_peminjam, tgl_pinjam, tgl_kembali, denda) :
         self.id_peminjaman = id_peminjaman
+        self.id_buku = id_buku
+        self.id_peminjam = id_peminjam
         self.tgl_pinjam = tgl_pinjam
         self.tgl_kembali = tgl_kembali
         self.denda = denda
@@ -97,6 +93,18 @@ class PeminjamanBuku :
     
     def get_id_peminjaman(self) :
         return self.id_peminjaman
+
+    def set_id_buku(self, id_buku) :
+        self.id_buku = id_buku
+    
+    def get_id_buku(self) :
+        return self.id_buku
+
+    def set_id_peminjam(self, id_peminjam) :
+        self.id_peminjaman = id_peminjam
+    
+    def get_id_peminjam(self) :
+        return self.id_peminjam
     
     def set_tgl_pinjam(self, tgl_pinjam) :
         self.tgl_pinjam = tgl_pinjam
@@ -105,9 +113,9 @@ class PeminjamanBuku :
         return self.tgl_pinjam
     
     def set_tgl_kembali(self, tgl_kembali) :
-        self.tgl_kembali = tgl_kembalif
+        self.tgl_kembali = tgl_kembali
     
-    def get_tgl_kembali(self, tgl_kembali) :
+    def get_tgl_kembali(self) :
         return self.tgl_kembali
     
     def set_denda(self, denda) :
